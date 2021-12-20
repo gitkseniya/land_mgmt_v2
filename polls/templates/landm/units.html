@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h5>Units</h5>
+
+<table class="table bordered striped">
+    <thead>
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>legal_description</td>
+        <td>order_no</td>
+        <td>actions</td>
+    </tr>
+    </thead>
+
+
+{% for node in data %}
+    <tr>
+        <td>{{ node.id }}</td>
+        <td><a href="unit/{{ node.pk }}">{{ node.name }}</a></td>
+        <td>{{ node.legal_description }}</td>
+        <td>{{ node.order_no }}</td>
+        <td></td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}
